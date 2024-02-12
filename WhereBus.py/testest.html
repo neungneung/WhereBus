@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Searching Tab</title>
+    <link rel="stylesheet" href="style.css">
+ <script>
+        function searchBus() {
+            var busNumber = document.getElementById("busNumberInput").value;
+
+            var results = [
+                "23 อู่ปู่เจ้าสมิงพราย - ท่าปล่อยรถเทเวศร์",
+                "23 ก. อู่เมกาอู่เมกาบางนา - ท่าปล่อยรถเทเวศร์",
+                "23 ปอ. ท่าปล่อยรถช้างสามเศียร - ท่าปล่อยรถเทเวศร์",
+            ];
+
+            displaySearchResults(results);
+        }
+
+        function displaySearchResults(results) {
+            var searchResultsDiv = document.getElementById("searchResults");
+            searchResultsDiv.innerHTML = "";
+
+            var resultList = document.createElement("ul");
+            results.forEach(result => {
+                var listItem = document.createElement("li");
+                var button = document.createElement("button");
+                button.onclick = function(){location.href=result}
+                button.innerHTML = result;
+                listItem.appendChild(button);
+                resultList.appendChild(listItem);
+            });
+            searchResultsDiv.appendChild(resultList);
+        }
+    </script>
+</head>
+<style>
+        .container {
+            max-width: 600px;
+            margin: 650px;
+            margin-top: 0px;
+            text-align: center;
+            background-color: #FEFCE6;
+            padding: 50px;
+            border-radius: 8px;
+            width: 1118px; 
+            height: 250px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: calc(100% - 90px);
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #285185;
+        }
+
+        #searchResults {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        #searchResults ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #searchResults ul li {
+            margin-bottom: 10px;
+        }
+
+    </style>
+<body>
+    <div class="test-test" style="width: 1920px; height: 1080px; position: relative; background: #285185">
+        <div class="container">
+            <div class="Wherebus" style="width: 1117px; height: 190px; left: 460px; top: 391px; position: absolute; color: #F16C1A; font-size: 120px; font-family: Inter; font-weight: 700; letter-spacing: 21.60px; word-wrap: break-word">WhereBus?</div>
+            <input type="text" id="busNumberInput" placeholder="กรอกเพื่อค้นหา">
+            <button onclick="searchBus()">ค้นหา</button>
+            <div id="searchResults"></div>
+
+
+
+</body>
+</html>
