@@ -68,5 +68,20 @@
             <button onclick="window.location.href='thank you.html'">Enter</button>
         }
 
+ <script>
+    document.getElementsByTagName("body").addEventListener("keyup",(event)=>{
+        if(event.keyCode===13) Enter()
+    })
+    function Enter() {
+        document.getElementById("Enter").innerHTML = " ";
+        location.href='searching tab.html'
+    }
+
+</script>
+
+    <button onclick="Enter()">Enter</button>
+    <div id="Enter"></div>
+    <element ondblclick = "Enter()"> 
+
 </script>
 </html>
