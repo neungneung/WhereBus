@@ -76,6 +76,9 @@
     <div style="width: 113px; height: 54px; left: 1670px; top: 755px; position: absolute; color: #4BEB31; font-size: 35px; font-family: Inter; font-weight: 500; word-wrap: break-word">15 นาที</div>
 </div>
 <script>
+    document.getElementsByTagName("body").addEventListener("keyup",(event)=>{
+        if(event.keyCode===13) Enter()
+    })
     function Enter() {
         document.getElementById("Enter").innerHTML = " ";
         location.href='searching tab.html'
